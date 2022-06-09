@@ -50,7 +50,7 @@ export const useGPU = (getCanvas: () => HTMLCanvasElement | null, renderInterval
     /** Does your browser support WebGPU */
     if(CheckWebGPU().includes('Your current browser does not support WebGPU!')){
         console.log(CheckWebGPU());
-        throw('Your current browser does not support WebGPU!');
+        throw(CheckWebGPU());
     }
 
     const colorState: ColorState = useSelector<RootState>((state) => state.colors) as ColorState;
